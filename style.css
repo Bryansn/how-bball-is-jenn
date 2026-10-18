@@ -1,0 +1,1120 @@
+/* General Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #10131c;
+    color: white;
+    min-height: 100vh;
+}
+
+/* Home Screen */
+
+.home-screen {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: radial-gradient(
+        circle at center,
+        #252b3d 0%,
+        #10131c 70%
+    );
+}
+
+/* Home Content */
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+/* Website Title */
+
+.home-content h1 {
+    font-size: clamp(40px, 7vw, 85px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow: 4px 4px 0px #ff6b00;
+}
+
+/* Play Button */
+
+#playButton {
+    background: #ff6b00;
+    color: white;
+
+    border: none;
+    padding: 20px 80px;
+    border-radius: 15px;
+
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Hover Animation */
+
+#playButton:hover {
+    background: #ff8533;
+    transform: scale(1.1);
+
+    box-shadow: 0 0 30px rgba(255, 107, 0, 0.5);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .home-content h1 {
+        font-size: 42px;
+    }
+
+    #playButton {
+        padding: 18px 65px;
+        font-size: 24px;
+    }
+}
+/* ==================================
+   TRIVIA SCREEN
+================================== */
+
+.trivia-screen,
+.results-screen {
+    display: none;
+    min-height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    background: #10131c;
+}
+
+/* Main Trivia Card */
+
+.trivia-container {
+    width: 100%;
+    max-width: 650px;
+
+    background: #1c2130;
+
+    padding: 40px;
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+/* Question Header */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: bold;
+    color: #ff6b00;
+
+    margin-bottom: 20px;
+}
+
+/* Progress Bar */
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+
+    background: #34394a;
+    border-radius: 20px;
+
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+
+    background: #ff6b00;
+    transition: width 0.3s;
+}
+
+/* Question Text */
+
+#questionText {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Answer Grid */
+
+.answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Answer Buttons */
+
+.answer-btn {
+    background: #2b3142;
+    color: white;
+
+    border: 2px solid transparent;
+    border-radius: 12px;
+
+    padding: 20px 15px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background: #3b4359;
+    border-color: #ff6b00;
+}
+
+.answer-btn:disabled {
+    cursor: default;
+}
+
+/* Correct Answer */
+
+.answer-btn.correct {
+    background: #198754;
+    border-color: #28a745;
+}
+
+/* Incorrect Answer */
+
+.answer-btn.wrong {
+    background: #b02a37;
+    border-color: #dc3545;
+}
+
+/* Feedback */
+
+#feedback {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+}
+
+/* Next Button */
+
+#nextButton {
+    display: none;
+
+    margin-top: 20px;
+
+    background: #ff6b00;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px 30px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+/* ==================================
+   RESULTS SCREEN
+================================== */
+
+.results-container {
+    text-align: center;
+
+    background: #1c2130;
+    padding: 50px;
+
+    border-radius: 20px;
+}
+
+.results-container h1 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.results-container h2 {
+    color: #ff6b00;
+    margin-bottom: 20px;
+}
+
+.results-container p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .trivia-container {
+        padding: 25px 20px;
+    }
+
+    .answers {
+        grid-template-columns: 1fr;
+    }
+
+    #questionText {
+        font-size: 23px;
+    }
+
+    .results-container {
+        padding: 35px 25px;
+    }
+}
+/* ==================================
+   NBA PLAYER IMAGES
+================================== */
+
+.player-image-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#playerImage {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+    background: #252b3d;
+}
+/* ==================================
+   SPECIAL PLAYER EFFECTS
+================================== */
+
+#specialEffect {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ==================================
+   LUKA SPECIAL MESSAGE
+================================== */
+
+#specialMessage {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    /* Dark pink background */
+    background: rgba(45, 15, 40, 0.95);
+
+    /* Pink border */
+    border: 3px solid #ff4d88;
+    border-radius: 20px;
+
+    /* Text */
+    color: #ff4d88;
+    font-size: clamp(24px, 4vw, 45px);
+    font-weight: 900;
+    text-align: center;
+
+    /* Spacing */
+    padding: 20px 35px;
+    width: max-content;
+    max-width: 90%;
+    box-sizing: border-box;
+
+    /* Pink glow */
+    box-shadow:
+        0 0 20px rgba(255, 77, 136, 0.7),
+        0 0 50px rgba(255, 77, 136, 0.3);
+
+    text-shadow: 2px 2px 0px #000;
+
+    z-index: 10;
+
+    /* Keep existing pop animation */
+    animation: messagePop 0.5s ease;
+}
+/* ==================================
+   LUKA PICTURES
+================================== */
+
+.effect-image {
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+
+    border: 5px solid #ff4d88;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(255, 77, 136, 0.7);
+
+    animation: imagePop 0.6s ease;
+}
+
+
+/* ==================================
+   FLOATING HEARTS
+================================== */
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+
+    font-size: 35px;
+
+    animation: floatHeart 3s linear infinite;
+}
+
+
+/* ==================================
+   ANIMATIONS
+================================== */
+
+/* Hearts float upward */
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* Luka pictures pop onto the screen */
+
+@keyframes imagePop {
+
+    0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+
+/* Special message pops onto the screen */
+
+@keyframes messagePop {
+
+    0% {
+        transform: translateX(-50%) scale(0);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+
+/* ==================================
+   MOBILE ADJUSTMENTS
+================================== */
+
+@media (max-width: 600px) {
+
+    .effect-image {
+        width: 95px;
+        height: 95px;
+    }
+
+    #specialMessage {
+        font-size: 24px;
+        padding: 15px 20px;
+    }
+
+}
+/* ==================================
+   STEPH CURRY SPECIAL EFFECT
+================================== */
+
+#curryEffect {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ==================================
+   CURRY MESSAGE
+================================== */
+
+#curryMessage {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(45, 15, 5, 0.95);
+
+    border: 3px solid #ff6b00;
+    border-radius: 20px;
+
+    color: #ffae00;
+
+    font-size: clamp(24px, 4vw, 45px);
+    font-weight: 900;
+    text-align: center;
+
+    padding: 20px 35px;
+
+    width: max-content;
+    max-width: 90%;
+
+    box-shadow:
+        0 0 20px rgba(255, 107, 0, 0.8),
+        0 0 50px rgba(255, 107, 0, 0.4);
+
+    text-shadow: 2px 2px 0 #000;
+
+    z-index: 10;
+
+    animation: curryMessagePop 0.5s ease;
+}
+
+/* ==================================
+   RISING FLAMES
+================================== */
+
+.curry-flame {
+    position: absolute;
+    bottom: -70px;
+
+    font-size: 60px;
+
+    animation: curryFireRise 3s linear infinite;
+}
+
+@keyframes curryFireRise {
+
+    0% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ==================================
+   FLOATING CHEF HATS
+================================== */
+
+.curry-hat {
+    position: absolute;
+    bottom: -70px;
+
+    font-size: 55px;
+
+    animation: curryHatFloat 5s linear infinite;
+}
+
+@keyframes curryHatFloat {
+
+    0% {
+        transform: translateY(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ==================================
+   MESSAGE ANIMATION
+================================== */
+
+@keyframes curryMessagePop {
+
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+/* ==================================
+   LEBRON LESUNSHINE EFFECT
+================================== */
+
+#lebronEffect {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 10000;
+
+    overflow: hidden;
+    pointer-events: none;
+
+    background: #000;
+}
+
+/* Full-screen LeBron picture */
+
+#lebronImage {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    animation: lebronZoom 8s ease-out forwards;
+}
+
+/* LESUNSHINE message */
+
+#lebronMessage {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #ffdd00;
+
+    font-size: clamp(40px, 9vw, 120px);
+    font-weight: 900;
+
+    text-align: center;
+
+    width: 100%;
+
+    text-shadow:
+        4px 4px 0px #000,
+        0 0 25px #ffae00,
+        0 0 50px #ff6b00;
+
+    animation: lebronTextPop 0.8s ease-out;
+}
+
+/* Picture slowly zooms in */
+
+@keyframes lebronZoom {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.2);
+    }
+
+}
+
+/* Text pops onto screen */
+
+@keyframes lebronTextPop {
+
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+}
+/* ==================================
+   JOKIC HORSE EFFECT
+================================== */
+
+#jokicEffect {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 9999;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* HORSES */
+
+.jokic-horse {
+    position: absolute;
+
+    left: -150px;
+
+    font-size: 70px;
+
+    animation: horseRun linear infinite;
+}
+
+/* HORSE RUNNING ANIMATION */
+
+@keyframes horseRun {
+
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+
+    25% {
+        transform: translateX(30vw) translateY(-15px);
+    }
+
+    50% {
+        transform: translateX(60vw) translateY(0);
+    }
+
+    75% {
+        transform: translateX(90vw) translateY(-15px);
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 300px)) translateY(0);
+    }
+
+}
+/* ==================================
+   GIANNIS GREEK FREAK EFFECT
+================================== */
+
+#giannisEffect {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ==================================
+   GREEN FLASH
+================================== */
+
+#giannisFlash {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 255, 100, 0.25);
+
+    animation: giannisFlashAnimation 0.7s ease-out forwards;
+}
+
+@keyframes giannisFlashAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ==================================
+   GREEK FREAK TITLE
+================================== */
+
+#giannisMessage {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(0, 30, 15, 0.95);
+
+    border: 3px solid #00ff88;
+    border-radius: 20px;
+
+    color: #00ff88;
+
+    font-size: clamp(28px, 5vw, 55px);
+    font-weight: 900;
+    text-align: center;
+
+    padding: 20px 40px;
+
+    width: max-content;
+    max-width: 90%;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 136, 0.8),
+        0 0 60px rgba(0, 255, 136, 0.4);
+
+    text-shadow:
+        3px 3px 0 #000,
+        0 0 20px #00ff88;
+
+    z-index: 10;
+
+    animation: giannisPop 0.5s ease-out;
+}
+
+@keyframes giannisPop {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ==================================
+   GIANNIS PICTURES
+================================== */
+
+.giannis-image {
+    position: absolute;
+
+    width: 180px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border: 4px solid #00ff88;
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 136, 0.8);
+
+    animation: giannisImagePop 0.6s ease-out;
+}
+
+@keyframes giannisImagePop {
+    0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* ==================================
+   FALLING LIGHTNING
+================================== */
+
+.giannis-bolt {
+    position: absolute;
+    top: -100px;
+
+    font-size: 60px;
+
+    animation: giannisBoltFall linear infinite;
+}
+
+@keyframes giannisBoltFall {
+    0% {
+        transform: translateY(0) rotate(-20deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(120vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* ==================================
+   SCREEN SHAKE
+================================== */
+
+.giannis-shake {
+    animation: giannisShake 0.5s ease-in-out;
+}
+
+@keyframes giannisShake {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-8px, 5px);
+    }
+
+    40% {
+        transform: translate(8px, -5px);
+    }
+
+    60% {
+        transform: translate(-6px, 4px);
+    }
+
+    80% {
+        transform: translate(6px, -4px);
+    }
+}
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media (max-width: 600px) {
+
+    .giannis-image {
+        width: 110px;
+        height: 140px;
+    }
+
+    #giannisMessage {
+        font-size: 28px;
+        padding: 15px 20px;
+    }
+
+}
+/* ==================================
+   CARTER BRYANT SPECIAL EFFECT
+================================== */
+
+#carterEffect {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* CUTIE PATOOTIE TITLE */
+
+#carterMessage {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(55, 15, 45, 0.95);
+
+    border: 3px solid #ff69b4;
+    border-radius: 20px;
+
+    padding: 20px 35px;
+
+    color: #ffb6d9;
+    font-size: clamp(25px, 5vw, 55px);
+    font-weight: 900;
+    text-align: center;
+
+    width: max-content;
+    max-width: 90%;
+    box-sizing: border-box;
+
+    box-shadow:
+        0 0 25px rgba(255, 105, 180, 0.8),
+        0 0 60px rgba(255, 105, 180, 0.4);
+
+    text-shadow: 2px 2px 0 #000;
+
+    z-index: 10;
+
+    animation: carterTitlePop 0.5s ease-out;
+}
+
+/* THREE CARTER PICTURES */
+
+.carter-image {
+    position: absolute;
+
+    width: 180px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border: 4px solid #ff69b4;
+    border-radius: 18px;
+
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8);
+
+    animation: carterImagePop 0.6s ease-out;
+}
+
+/* FLOATING SPARKLES */
+
+.carter-sparkle {
+    position: absolute;
+    bottom: -50px;
+
+    font-size: 35px;
+
+    animation: carterSparkleFloat 4s linear infinite;
+}
+
+/* TITLE ANIMATION */
+
+@keyframes carterTitlePop {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* PICTURE ANIMATION */
+
+@keyframes carterImagePop {
+    0% {
+        transform: scale(0) rotate(-15deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+/* SPARKLES FLOAT UPWARD */
+
+@keyframes carterSparkleFloat {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .carter-image {
+        width: 100px;
+        height: 125px;
+    }
+
+    #carterMessage {
+        font-size: 24px;
+        padding: 15px 20px;
+    }
+}
+/* ==================================
+   WEMBY FULL SCREEN VIDEO
+================================== */
+
+#wembyVideoEffect {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: black;
+
+    z-index: 99999;
+
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/* VIDEO TAKES UP ENTIRE SCREEN */
+
+#wembyVideo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+/* ==================================
+   LUKA RUNAWAY BUTTON 😂
+================================== */
+
+.runaway-luka {
+    cursor: pointer;
+    transition: left 0.15s ease, top 0.15s ease;
+}
+
+.runaway-luka:hover {
+    background: #ff6b35;
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>How BBALL Is Jenn?</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HOME SCREEN -->
+    <main class="home-screen" id="homeScreen">
+
+        <div class="home-content">
+
+            <h1>HOW BBALL IS JENN?</h1>
+
+            <button id="playButton">PLAY</button>
+
+        </div>
+
+    </main>
+
+
+    <!-- TRIVIA SCREEN -->
+    <section class="trivia-screen" id="triviaScreen">
+
+        <div class="trivia-container">
+
+            <!-- Score and Question Number -->
+            <div class="game-header">
+                <p id="questionNumber">QUESTION 1 / 10</p>
+                <p id="score">SCORE: 0</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+            <!-- Question -->
+            <h2 id="questionText">Question goes here</h2>
+
+            <!-- NBA Player Image -->
+            <div class="player-image-container" id="playerImageContainer">
+                <img id="playerImage" src="" alt="Guess the NBA player">
+            </div>
+
+            <!-- Answer Choices -->
+            <div class="answers" id="answers"></div>
+
+            <!-- Feedback -->
+            <p id="feedback"></p>
+
+            <!-- Next Question -->
+            <button id="nextButton">NEXT QUESTION →</button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS SCREEN -->
+<section class="results-screen" id="resultsScreen">
+
+    <div class="results-container">
+
+        <h1>GAME OVER! 🏀</h1>
+
+        <h2 id="finalScore">YOUR SCORE: 0</h2>
+
+        <p id="resultMessage"></p>
+
+        <!-- JENN KNOWS BALL IMAGES -->
+        <div class="results-images">
+
+            <img src="Images/jenndunk.png" alt="Stephen Curry">
+
+            <img src="Images/Basketball Stars in a Dim Restroom Selfie (2).png" alt="Second celebration picture">
+
+        </div>
+
+        <button id="restartButton">PLAY AGAIN</button>
+
+    </div>
+
+</section>
+
+    <!-- SPECIAL PLAYER EFFECTS -->
+    <div id="specialEffect">
+
+    <h1 id="specialMessage"></h1>
+
+    <div id="effectImages"></div>
+
+    <div id="heartsContainer"></div>
+
+</div>
+
+    <!-- STEPH CURRY SPECIAL EFFECT -->
+    <div id="curryEffect">
+
+    <h1 id="curryMessage">🔥 JENN IS COOKING 🔥</h1>
+
+    <div id="curryFlames"></div>
+
+    <div id="curryHats"></div>
+
+</div>
+
+<!-- LEBRON LESUNSHINE EFFECT -->
+<div id="lebronEffect">
+
+    <img
+        id="lebronImage"
+        src="Images/effects/Lesunshine.jpg"
+        alt="LeBron James"
+    >
+
+    <h1 id="lebronMessage">☀️ LESUNSHINE ☀️</h1>
+
+</div>
+<!-- ==================================
+     JOKIC HORSE EFFECT
+================================== -->
+
+<div id="jokicEffect">
+    <div id="horsesContainer"></div>
+</div>
+
+<!-- ==================================
+     GIANNIS GREEK FREAK EFFECT
+================================== -->
+
+<div id="giannisEffect">
+
+    <!-- Green Flash -->
+    <div id="giannisFlash"></div>
+
+    <!-- Title -->
+    <h1 id="giannisMessage">
+        ⚡ GREEK FREAK ⚡
+    </h1>
+
+    <!-- Giannis Pictures -->
+    <div id="giannisImages"></div>
+
+    <!-- Lightning -->
+    <div id="giannisLightning"></div>
+
+</div>
+<!-- ==================================
+     CARTER BRYANT SPECIAL EFFECT
+================================== -->
+
+<div id="carterEffect">
+
+    <h1 id="carterMessage">
+        💗 CUTIE PATOOTIE 💗
+    </h1>
+
+    <div id="carterImages"></div>
+
+    <div id="carterSparkles"></div>
+
+</div>
+
+<!-- WEMBY VIDEO EFFECT -->
+
+<div id="wembyVideoEffect">
+
+    <video id="wembyVideo" playsinline>
+        <source src="Videos/wemby.mp4" type="video/mp4">
+    </video>
+
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
