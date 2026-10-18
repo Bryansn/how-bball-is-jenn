@@ -156,7 +156,7 @@ const questions = [
         correct: "A flashy layup using creative hand movements or ball spins"
     },
     {
-        question: "What is jelly in basketball?",
+        question: "What is triple double in basketball?",
         answers: [
             "Making three three-pointers in a row",
             "Recording 10 or more in three different statistical categories",
